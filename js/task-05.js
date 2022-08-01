@@ -7,6 +7,9 @@ console.log(spanEl);
 inputEl.addEventListener('input', onInputChange);
 
 function onInputChange(event) {
-    console.log(event.currentTarget.value);
+    const valueInput = event.currentTarget.value;
+    if (valueInput.length === 0) {
+        return spanEl.textContent = 'Anonymous';
+    }
     spanEl.textContent = event.currentTarget.value;
 }
